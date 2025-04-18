@@ -36,4 +36,6 @@ function defs(){
   document.getElementById("color").value = "rgba(0,0,0,0)";
   document.getElementById("mode").value = "p";
 }
+document.getElementById("dow").href = canvas.toDataURL("image/png");
+requestAnimationFrame(()=>{document.title = document.getElementById("t").value});
 enablecanvas();
