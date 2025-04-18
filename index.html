@@ -11,10 +11,10 @@
     <canvas id="canvaselement"></canvas>
     <div id="options">
       thickness: <input id="pct" value="5"type="number"/><br>
-      color: <input id='color' type="color"/>
+      color: <input id='color' type="color"/> autofill: <input id='color2' value="#ffffff" type="color"/> fill: <button onclick="fill();">fill</button>
       mode: <select id="mode"><option value="p">pencil</option><option value="e">erase</option></select><br>
       <button onclick="clearr();">clear canvas</button> <button onclick="defs();">default settings</button><br>
-      <a href="#" id="dow" download="#">download file</a>
+      <button onclick="downloadc();">download image</button>
     </div>
   </body>
   <script src="script.js"></script>
