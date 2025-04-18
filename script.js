@@ -16,6 +16,8 @@ canvas.addEventListener("mouseup",()=>{
 canvas.addEventListener("mouseleave",()=>{
   mouse.down = false;
 });
+ctx.fillStyle = document.getElementById("color2").value;
+ctx.fillRect(0,0,canvas.width,canvas.height);
 function enablecanvas(){
   if (mouse.down){
     let tn = document.getElementById("pct").value;
@@ -36,7 +38,13 @@ function defs(){
   document.getElementById("color").value = "rgba(0,0,0,0)";
   document.getElementById("mode").value = "p";
 }
-let dow = document.getElementById("dow");
-dow.href = canvas.toDataURL("image/png");
-dow.setAttribute("download",canvas.toDataURL("image/png"));
+function fill(){
+  ctx.fillStyle = document.getElementById("color2").value;
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+}
+let a = document.createElement("a");
+function downloadc(){
+   a.setAttribute("href",canvas.toDataURL("image/png"));
+  a.click();
+}
 enablecanvas();
