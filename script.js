@@ -39,5 +39,4 @@ function defs(){
 let dow = document.getElementById("dow");
 dow.href = canvas.toDataURL("image/png");
 dow.setAttribute("download",canvas.toDataURL("image/png"));
-requestAnimationFrame(()=>{document.title = document.getElementById("t").value});
 enablecanvas();
