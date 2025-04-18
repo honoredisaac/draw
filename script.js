@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvaselement');
 const ctx = canvas.getContext('2d');
-const mouse = {x:0,y:0,down:false};
+const mouse = {x:-5,y:-5,down:false};
+canvas.width = 500;
+canvas.height = 500;
 canvas.addEventListener("mousemove",(m)=>{
   mouse.x = m.offsetX;
   mouse.y = m.offsetY;
@@ -16,8 +18,22 @@ canvas.addEventListener("mouseleave",()=>{
 });
 function enablecanvas(){
   if (mouse.down){
-    ctx.fillRect(mouse.x,mouse.y,5,2.5);
+    let tn = document.getElementById("pct").value;
+    ctx.fillStyle = document.getElementById("color").value;
+    if (document.getElementById("mode").value === "p"){
+      ctx.fillRect(mouse.x,mouse.y,tn,tn);
+    }else{
+      ctx.clearRect(mouse.x,mouse.y,tn,tn);
+    }
   }
   requestAnimationFrame(enablecanvas);
+}
+function clearr(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+function defs(){
+  document.getElementById("pct").value = 5;
+  document.getElementById("color").value = "rgba(0,0,0,0)";
+  document.getElementById("mode").value = "p";
 }
 enablecanvas();
