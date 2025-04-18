@@ -45,6 +45,10 @@ function fill(){
 let a = document.createElement("a");
 function downloadc(){
    a.setAttribute("href",canvas.toDataURL("image/png"));
+   a.download = document.title.replace(/\s+/g, '')+".png";
   a.click();
+}
+function titled(){
+  document.title = document.getElementById("ttt").value;
 }
 enablecanvas();
