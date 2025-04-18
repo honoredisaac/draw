@@ -9,6 +9,12 @@
     <h1>draw<br>in<br>this<br>canvas</h1>
     <h2>→</h2>
     <canvas id="canvaselement"></canvas>
+    <div id="options">
+      thickness: <input id="pct" value="5"type="number"/><br>
+      color: <input id='color' type="color"/>
+      mode: <select id="mode"><option value="p">pencil</option><option value="e">erase</option></select><br>
+      <button onclick="clearr();">clear canvas</button> <button onclick="defs();">default settings</button>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
